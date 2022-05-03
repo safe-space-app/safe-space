@@ -19,9 +19,9 @@ const Login = (props) => {
         className="LoginBox"
         onSubmit={handleSubmit((data) => {
           //fetch request to server w/ email & password for login
-          fetch("/accounts/login", {
+          fetch("http://localhost:3000/login", {
             headers: {
-              Accept: "application/json",
+              "Accept": "application/json",
               "Content-Type": "application/json",
             },
             method: "POST",
@@ -29,7 +29,8 @@ const Login = (props) => {
           })
             .then((response) => response.json())
             .then((data) => {
-              props.setUser(data.account);
+              console.log('data in login.jsx fetch: ', data)
+              props.setUser(data);
             })
             .catch((err) => {
               console.log("were getting an error", err);

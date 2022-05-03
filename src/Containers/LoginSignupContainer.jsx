@@ -3,13 +3,14 @@ import React from 'react';
 //import SignUp from '../components/SignUp.jsx';
 import LoginSignup from  "../Components/LoginSignup.jsx"
 import '../Stylesheets/Login.scss';
+import NavBar from '../Components/NavBar.jsx'
 
 //Page that returns the login and signup components
 
 const LoginSignupContainer = (props) => {
   return (
     <div className='LSPage'>
-
+      {/* <NavBar /> */}
       <div id={'img1'}>
         {/* <img id='loginArt1' src='https://media.istockphoto.com/vectors/check-the-goods-in-stock-before-sending-it-to-a-customer-beginning-of-vector-id1057532448?k=20&m=1057532448&s=612x612&w=0&h=fmINUJsUX0mQs4go6jEirlNUz1i3Vv6dWEzkFIJrDvg='></img> */}
       </div>
