@@ -12,7 +12,7 @@ import Navbar from './Components/NavBar.jsx';
 function App() {
 
   const [user, setUser] = useState({});
-  console.log('user', user);
+  const [location, setLocation] = useState([])
 
   return (
     <div className="App">
@@ -21,9 +21,8 @@ function App() {
       <BrowserRouter>
       <Navbar user={user}/>
         <Routes>
-          <Route path ='/' element={<LoginSignupContainer setUser={setUser}/> }/>
-          {/* <Route path ='/signup' element={<Signup setUser = {setUser}/> }/> */}
-          <Route path = '/feed' element={<FeedContainer user={user}/> }/>
+          <Route path ='/' element={<LoginSignupContainer location={location} setLocation={setLocation} setUser={setUser}/> }/>
+          <Route path = '/feed' element={<FeedContainer location={location} setLocation={setLocation} user={user}/> }/>
         </Routes>
       </BrowserRouter>
       
