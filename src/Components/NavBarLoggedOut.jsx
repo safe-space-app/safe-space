@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet, Link } from "react-router-dom";
 import '../Stylesheets/NavBar.scss';
-
+import logo from '../Images/logo.png'
 // import AccountPageContainer from '../containers/AccountPageContainer.jsx';
 // import InventoryPageContainer from '../containers/InventoryPageContainer.jsx';
 // import LoginSignupContainer from '../containers/LoginSignupContainer.jsx';
@@ -25,7 +25,8 @@ const NavbarLoggedOut = () => {
   return (
     <div className='LoggedOut'>
      {/* <img className='logo' src="https://static.wixstatic.com/media/380eea_d2d6e4ed1151439b8d4d18f1e3950d5b~mv2.png/v1/fill/w_320,h_320,al_c,usm_0.66_1.00_0.01,enc_auto/Inventory2.png" /> */}
-     <h1 className='brand' >SafeSpace</h1>
+     <img className="logo" src={logo}></img>
+     {/* <h1 className='brand' >SafeSpace</h1> */}
      {/* <h2 className='subHeader'>Inventory Made Easy</h2> */}
      {/* <a href="aboutUs" className='deadLink1'> About Us </a> */}
      {/* <a href="packages" className='deadLink2'> Packages </a> */}
