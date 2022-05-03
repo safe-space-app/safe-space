@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  //display :none
+  //have container toggle between display block and display none
+  
+  //Login/Signup compnent
+  
+  .LSPage {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .LoginSignupBox {
+      display: flex;
+      flex-direction: column;
+      margin-left: auto;
+      margin-right: auto;
+      border-radius: 5%;
+      background-color: rgb(240, 241, 231);
+      
+      border-style: outset;
+  
+      width: 250px;
+      height: auto;
+      align-items: center;
+      border: 3px solid rgb(240, 241, 231); 
+      background-color: #28afd8d2;
+      border-radius: 20px;
+      box-sizing: border-box;
+      padding: 20px;
+      width: 320px;
+      margin-top: 20px;
+  };
+  
+  //welcome Header
+  .welcome {
+      color: #eee;
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+    font-size: 36px;
+    font-weight: 500;
+    margin-top: 30px;
+  }
+  
+  //sign in / sign up header
+  .SI {
+      color: #eee;
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+    font-size: 19px;
+    font-weight: 500;
+    margin: 20px;
+    text-align: center;
+  }
+  
+  // login email input box
+  #username {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 15px;
+    height:100%;
+    outline: 0;
+    padding: 5px 20px 5px;
+    width: 100%;
+    margin-top: 5%;
+  }
+  // login password input box
+  #PW {
+      background-color: #303245;
+      border-radius: 12px;
+      border: 0;
+      box-sizing: border-box;
+      color: #eee;
+      font-size: 15px;
+      height:100%;
+      outline: 0;
+      padding: 5px 20px 5px 20px;
+      width: 100%;
+      margin-top: 5%;
+      margin-bottom: 50%;
+  }
+  
+  // signup name box
+  #namesignup {
+      background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 15px;
+    height:100%;
+    outline: 0;
+    padding: 5px 20px 5px;
+    width: 100%;
+    margin-top: 2%;
+  }
+  
+  // email signup box
+  #emailsignup {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 15px;
+    height:100%;
+    outline: 0;
+    padding: 5px 20px 5px;
+    width: 100%;
+    margin-top: 2%;
+  }
+  
+  // signup password signup box
+  #pwsignup {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 15px;
+    height:100%;
+    outline: 0;
+    padding: 5px 20px 5px;
+    width: 100%;
+    margin-top: 2%;
+  }
+  
+  // signup category drop down 
+  #dropdownlogin {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #eee;
+    font-size: 15px;
+    height:100%;
+    outline: 0;
+    padding: 5px 20px 5px;
+    width: 100%;
+    margin-top: 2%;
+    margin-bottom: 25%;
+  }
+  
+  // submit button style
+  .submitbutton {
+    background: linear-gradient(-180deg, #ff72f1 0%, #f193ff 100%);
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #FFFFFF;
+    font-size: 16px;
+    padding: 1rem 1.75rem;
+    width: 100%;
+    border: 0;
+    margin-bottom: 5%;
+    transition-duration: .3s;
+  }
+  
+  .submitbutton:hover {
+    background: linear-gradient(-180deg, #1da8e4 0%, rgb(0, 216, 216) 100%);
+    cursor: pointer;
+  }
+  
+  
+  
+  // terms and conditions link
+  .Terms {
+      display: grid;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      max-height: 10%;
+      position: right;
+      
+  }
+  
+  // HOMEPAGE IMAGE 
+  
+  #img1{
+    display: flex;
+    justify-content: space-around;
+    #loginArt1 {
+      max-width: 80%;
+      max-height: auto;
+      min-height: 200px;
+      min-width: 291.5px;
+    }
+  }
+  
+  #img2{
+    display: flex;
+    justify-content: space-around;
+    #loginArt2 {
+        max-width: 70%;
+        max-height: auto;
+        min-height: 170px;
+        min-width: 200px;
+    }
+  }
+  
+  
+  
+  // MING EDITS
+  .LogSign {
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  
+  @media screen and (max-width: 500px) {
+    .LSPage {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
