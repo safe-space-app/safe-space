@@ -17,6 +17,7 @@ const userController = {
   },
 
   login (req, res, next) {
+    console.log('inside user login')
     User.findOne({ username: req.body.username, password: req.body.password }, (err, user) => {
       if(err)
       {
@@ -24,7 +25,7 @@ const userController = {
         return next(err);
       }
       else{
-        res.locals.account = user;
+        res.locals.data.account = user;
         console.log('Found account, logging in...')
         return next();
       }
