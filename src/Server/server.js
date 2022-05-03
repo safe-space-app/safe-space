@@ -15,7 +15,7 @@ mongoose.connection.once('open', () => {
 app.use(cors({origin: 'http://localhost:8080',credentials: true,}));
 app.use(express.json());
 
-app.post('/getLocation', locationController.getLocation, (req, res) => {
+app.post('/getLocation', locationController.changeLocations, (req, res) => {
   res.status(200).json(res.locals.data)
 })
 
@@ -23,8 +23,8 @@ app.post('/createAccount', userController.createAccount, (req, res) => {
   res.sendStatus(200)
 })
 
-app.post('/login', userController.login, (req, res) => {
-  res.status(200).json(res.locals.account);
+app.post('/login', locationController.getLocations, userController.login, (req, res) => {
+  res.status(200).json(res.locals.data);
 })
 
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));
