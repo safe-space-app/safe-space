@@ -11,6 +11,7 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    height: 100vw;
   }
   
   .LoginSignupBox {
@@ -19,26 +20,25 @@
       margin-left: auto;
       margin-right: auto;
       border-radius: 5%;
-      background-color: rgb(240, 241, 231);
+      background-color: #282c34;
       
       border-style: outset;
   
-      width: 250px;
-      height: auto;
+      width: 100vw;
+      height: 100vw;
       align-items: center;
-      border: 3px solid rgb(240, 241, 231); 
-      background-color: #28afd8d2;
+      // border: 3px solid rgb(240, 241, 231); 
+      background-color: #282c34;
       border-radius: 20px;
       box-sizing: border-box;
       padding: 20px;
-      width: 320px;
+      width: 95vw;
       margin-top: 20px;
   };
   
   //welcome Header
   .welcome {
-      color: #eee;
-      font-family: 'Roboto', sans-serif;
+      fill: linear-gradient(-180deg, #ff72f1 0%, #f194ff 100%);      font-family: 'Roboto', sans-serif;
       font-style: normal;
     font-size: 36px;
     font-weight: 500;
@@ -58,7 +58,7 @@
   
   // login email input box
   #username {
-    background-color: rgb(255, 112, 255);
+    background-color: #FFFFFF;
     border-radius: 12px;
     border: 0;
     box-sizing: border-box;
@@ -149,7 +149,7 @@
   
   // submit button style
   .submitbutton {
-    background: linear-gradient(-180deg, #ff72f1 0%, #f193ff 100%);
+    background: linear-gradient(-180deg, #ff72f1 0%, #f194ff 100%);
     border-radius: .5rem;
     box-sizing: border-box;
     color: #FFFFFF;
@@ -215,7 +215,7 @@
   
   
   
-  @media screen and (max-width: 500px) {
+  @media screen and (max-width: 100vw) {
     .LSPage {
       display: flex;
       flex-direction: column;

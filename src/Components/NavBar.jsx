@@ -22,8 +22,6 @@ will contain on logged in page:
 */
 
 const Navbar = (props) => {
-  console.log('props in navbar: ', props)
-
   const [isShow, setIsShow] = React.useState(true);  
   const handleClick = () => {setIsShow(s => !s)};
 
@@ -32,14 +30,12 @@ const Navbar = (props) => {
   // if our user doesn't have any data added into post trying to login - rerender the loggedOut NavBar and stay
   // on the login page
   let result = Object.entries(props.user);
-  console.log('result: ', result)
 
   if (result.length){
     console.log('truueee');
   } else {
-    console.log('false');
+    console.log('falseeee');
   }
-  console.log('Is user true?? ', props.user);
 
   // if the object has no entries, render NavBarLoggedOut
   if (!Object.entries(props.user).length){

@@ -16,7 +16,7 @@ const LoginSignup = (props) => {
 if (isShow){
   return (
     <div>
-      <Login setUser = {props.setUser}/>
+      <Login setUser = {props.setUser} location={props.location} setLocation={props.setLocation}/>
       <div className="button-container">
           
         </div>

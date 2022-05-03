@@ -1,7 +1,9 @@
 import BusinessCard from '../Components/BusinessCard';
+import '../Stylesheets/Feed.scss' 
+
 
 const CardContainer = (props) => {
-console.log(props.location)
+console.log('props.location in cardcontainer: ', props.location)
     const businesses = props.location.map(business => {
       return <BusinessCard 
         name={business.name}
@@ -10,12 +12,13 @@ console.log(props.location)
         city={business.location.city}
         state={business.location.state}
         zipcode={business.location.zip_code}
+        image={business.image_url}
       />
     })
     
     return(
       <div>
-          <h3>Here are some safe spaces!</h3>
+          <h3 className="header"> Here are some safe spaces!</h3>
         { businesses }
       </div>
     )
