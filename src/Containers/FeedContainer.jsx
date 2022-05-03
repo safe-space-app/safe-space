@@ -4,15 +4,14 @@ import {useState} from 'react'
 import NavBar from '../Components/NavBar'
 
 const FeedContainer = (props) => {
-  const [location, setLocation] = useState([])
   return(
     <div>
       {/* <NavBar /> */}
       <SearchBar
-        setLocation={setLocation}
+        setLocation={props.setLocation}
       />
       <CardContainer
-        location={location}
+        location={props.location}
       />
     </div>
   )

@@ -1,5 +1,4 @@
-
-
+import '../Stylesheets/Feed.scss'
 
 const SearchBar = (props) => {
 
@@ -27,9 +26,9 @@ const SearchBar = (props) => {
 
     return (
         <div>
-            <label>Search by location: </label>
-            <input className='currentWeather' id='city' type='text' placeholder='city' />
-            <input className='currentWeather' id='state' type='text' placeholder='state'/>
+            <label className="header">Search by location: </label><br></br>
+            <input className='currentWeather' id='city' type='text' placeholder='city' /><br></br>
+            <input className='currentWeather' id='state' type='text' placeholder='state'/><br></br>
             <button className="searchBtn" onClick={clickSearch}>Search</button>
         </div>
     )
