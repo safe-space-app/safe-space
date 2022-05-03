@@ -21,7 +21,10 @@ const SignUp = (props) => {
     <div id={'signup-container'}>
       <h2 className='SI'>Please sign up</h2>
       <form onSubmit={ handleSubmit((data) => {
-        fetch('/accounts/signup', {
+        console.log('creating a user')
+        console.log(data)
+        // {username: xxxx , password: yyyy}
+        fetch('http://localhost:3000/createAccount', {
           headers: {
             'Accept' : 'application/json',
             'Content-Type': 'application/json'
@@ -48,7 +51,7 @@ const SignUp = (props) => {
         });
       })}>
         <div className="input-container" key={13}>
-          <input key = {"e"} {...register("name")} type="text" id="namesignup" name="name" placeholder="Username" required />
+          <input key = {"e"} {...register("username")} type="text" id="namesignup" username="username" placeholder="Username" required />
           {/* {renderErrorMessage("Please enter username")} */}
         </div>
         <div className="input-container" key={14}>
@@ -58,14 +61,14 @@ const SignUp = (props) => {
         <div className="input-container" key={15}>
           <input key = {"g"} {...register("password")} type="password" id="pwsignup" name="password" placeholder="Password" required />
           {/* {renderErrorMessage("Please enter password")} */}
-        </div>
-        <div className="input-container" key={16}>
+        {/* </div> */}
+        {/* <div className="input-container" key={16}>
           <select {...register("type")} id="dropdownlogin" placeholder='Category'>
             <option key = {"a"} value = "Small Business" label = "Small Business" />
             <option key = {"b"} value = "Online Store" label = "Online Store" />
             <option key = {"c"} value = "Restaurant" label = "Restaurant" />
             <option key = {"d"} value = "Personal" label = "Personal" />
-          </select>
+          </select> */}
           {/* {renderErrorMessage("Please enter password")} */}
           {/* if sign up declined, empty div else render the Username Already Taken*/}
           {signUpFail}
