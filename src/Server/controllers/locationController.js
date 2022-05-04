@@ -1,5 +1,5 @@
 import fetch from 'node-fetch';
-import Location from '../../database/models/locationModel';
+import Location from '../../database/models/locationModel.js';
 
 const locationController = {
   changeLocations(req, res, next) {
@@ -43,7 +43,7 @@ const locationController = {
       })
       .then(data => data.json())
       .then((data) => {
-        res.locals.data = {};
+        
         res.locals.data.locations = data.businesses;
         return next();
       })

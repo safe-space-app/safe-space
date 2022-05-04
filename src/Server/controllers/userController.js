@@ -6,6 +6,7 @@ const userController = {
     console.log('inside create account middleware')
 
     
+
     const newUser = await User.create ({
     username: req.body.username,
     password: req.body.password,
@@ -17,6 +18,7 @@ const userController = {
   },
 
   login (req, res, next) {
+    res.locals.data = {};
     console.log('inside user login')
     User.findOne({ username: req.body.username, password: req.body.password }, (err, user) => {
       if(err)

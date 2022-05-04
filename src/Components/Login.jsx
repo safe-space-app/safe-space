@@ -28,9 +28,6 @@ const Login = (props) => {
     })
   })
 
-  console.log(latitude)
-  console.log(longitude)
-
   const [loggedInState, setLoggedInState] = useState(false)
 
   return loggedInState ? <Navigate to="/feed" /> : (
@@ -39,13 +36,17 @@ const Login = (props) => {
       <h2 className="SI">Please sign in</h2>
       <form
         className="LoginBox"
-        onSubmit={handleSubmit((data, latitude, longitude) => {
-          console.log('handlesubmit data: ', data)
+        onSubmit={handleSubmit((data) => {
+          // console.log('handlesubmit data: ', data)
           const {username, password} = data
+          console.log(username)
+          console.log(password)
+          console.log('latitude', latitude)
+          console.log('longitude', longitude)
           //fetch request to server w/ email & password for login
           fetch("http://localhost:3000/login", {
             method: "POST",
-            body: JSON.stringify(username, password, latitude, longitude),
+            body: JSON.stringify({username, password, latitude, longitude}),
             headers: {
               "Accept": "application/json",
               "Content-Type": "application/json",

@@ -23,7 +23,7 @@ app.post('/createAccount', userController.createAccount, (req, res) => {
   res.sendStatus(200)
 })
 
-app.post('/login', locationController.getLocations, userController.login, (req, res) => {
+app.post('/login',  userController.login, locationController.getLocations,(req, res) => {
   res.status(200).json(res.locals.data);
 })
 
