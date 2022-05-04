@@ -27,4 +27,12 @@ app.post('/login',  userController.login, locationController.getLocations,(req, 
   res.status(200).json(res.locals.data);
 })
 
+app.post('/vote', locationController.voteLocation, (req, res) => {
+  res.status(200);
+})
+
+app.post('/getVotes', locationController.getVotes, (req, res) => {
+  res.status(200).json(res.locals.votes);
+})
+
 app.listen(PORT, () => console.log(`Listening on PORT: ${PORT}`));

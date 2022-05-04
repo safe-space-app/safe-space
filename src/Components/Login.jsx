@@ -64,23 +64,6 @@ const Login = (props) => {
               console.log("were getting an error", err);
               alert('Wrong username/password');
             });
-          // fetch("http://localhost:3000/sendlocation", {
-          //   method: "POST",
-          //   body: JSON.stringify({latitude, longitude}),
-          //   headers: {
-          //     "Accept": "application/json",
-          //     "Content-Type": "application/json",
-          //   }
-          // })
-          //   .then((response) => response.json())
-          //   .then((data) => {
-          //     //set location state here
-          //     props.setLocation(data)
-          //   })
-          //   .catch(error => console.log('error in login lat/long request: ', error))
-
-          // create a post request then in the body send username and password
-         // setData(JSON.stringify(data))
       })}>
       <div className="input-container" >
         <input {...register("username")} type="text" id="username" name="username" placeholder="Username" required />
@@ -90,6 +73,7 @@ const Login = (props) => {
         <input {...register("password")} type="password" id="PW" name="password" placeholder="Password" required />
         
       </div>
+      
       <button type="submit" className="submitbutton" >Submit</button>
     </form>
       

@@ -43,7 +43,7 @@ const locationController = {
       })
       .then(data => data.json())
       .then((data) => {
-        
+        console.log('got locations')
         res.locals.data.locations = data.businesses;
         return next();
       })
@@ -59,39 +59,66 @@ const locationController = {
     try { 
       const { locationId, action } = req.body;
       //if req.body.action is upvote
-      Location.findOne ({ locationId: locationId}, async (err, location) => {
+      console.log(locationId)
+      Location.findOne ({ locationId: locationId } , async (err, location) => {
 
         // if location doesnt not exist in database, insert
-        if (err) {
+        if (!location) {
+          console.log('did not find location');
           if(action === 'upvote'){
-              const newLocation = new Location({
+              await Location.create({
               locationId: locationId,
               upvotes: 1,
             })
           }
           else{
-              const newLocation = new Location({
+              await Location.create({
               locationId: locationId,
               downvotes: 1,
             })
           }
           return next();
         } 
+        else if(location){
+          if(action === 'upvote'){
+            await Location.findOneAndUpdate({locationId: locationId}, {upvotes : location.upvotes + 1})
+          } else {
+            await Location.findOneAndUpdate({locationId: locationId}, {downvotes : location.downvotes + 1})
+          }
+          return next()
+        }
         
         // if location exists in database increment data
         else { 
-          if(action === 'upvote'){
-            location.upvotes = location.upvotes++;
-            await location.save();
-          } else {
-            location.downvotes = location.downvotes++;
-            await location.save();
-          }
-          return next();
+          console.log('voteLocations error')
+          return next(err);
         }
       }); 
     } catch(err) { next(err) }
     
+  },
+  getVotes(req, res, next){
+    try{
+
+      const { locationId } = req.body;
+      // make a database query using locationID and send back votes if it exists
+      Location.findOne({locationId}, (notFound, location) => {
+        res.locals.votes = {};
+        if(location){
+
+          res.locals.votes.upvotes = location.upvotes;
+          res.locals.votes.downvotes = location.downvotes;
+          console.log(`votes for ${locationId}: ${res.locals.votes}` )
+          
+        }
+        next();
+      })
+
+
+    }
+    catch(err) {
+      next(err);
+    }
   }
 }
 
