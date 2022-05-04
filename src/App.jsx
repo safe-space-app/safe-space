@@ -19,7 +19,7 @@ function App() {
       
 
       <BrowserRouter>
-      <Navbar user={user}/>
+     <Navbar className='navBar' user={user}/>
         <Routes>
           <Route path ='/' element={<LoginSignupContainer location={location} setLocation={setLocation} setUser={setUser}/> }/>
           <Route path = '/feed' element={<FeedContainer location={location} setLocation={setLocation} user={user}/> }/>

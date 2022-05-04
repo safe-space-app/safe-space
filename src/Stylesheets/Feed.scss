@@ -14,3 +14,39 @@
   .header {
     color: white;
   }
+
+.searchBar {
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 15px;
+  height:4vh;
+  outline: 0;
+  padding: 5px 20px 5px 20px;
+  width: 80vw;
+  margin-top: 1%;
+  margin-bottom: 0%;
+}
+
+.searchBtn {
+  background: linear-gradient(-180deg, #ff72f1 0%, #f194ff 100%);
+  border-radius: .5rem;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 16px;
+  padding: 1;
+  width: 30vw;
+  height: 4vh;
+  border: 0;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  transition-duration: .3s;
+}
+
+.feedHeader {
+  margin-top: 51%;
+  color: white;
+
+}

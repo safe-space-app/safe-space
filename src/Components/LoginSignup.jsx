@@ -34,7 +34,7 @@ if (isShow){
             <a href="#" className='toggle' onClick={ handleClick }> Already a member? Log-In here! </a>
           </div>
           <div className="Terms">
-            <a href="Terms"> Terms & Conditions / FAQ </a>
+            <a className="Terms" href="Terms"> Terms & Conditions / FAQ </a>
           </div>
         </div>
     )
