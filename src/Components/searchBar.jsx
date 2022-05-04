@@ -26,9 +26,9 @@ const SearchBar = (props) => {
 
     return (
         <div>
-            <label className="header">Search by location: </label><br></br>
-            <input className='currentWeather' id='city' type='text' placeholder='city' /><br></br>
-            <input className='currentWeather' id='state' type='text' placeholder='state'/><br></br>
+            <label className="feedHeader">Search by location: </label><br></br>
+            <input className='searchBar' id='city' type='text' placeholder='city' /><br></br>
+            <input className='searchBar' id='state' type='text' placeholder='state'/><br></br>
             <button className="searchBtn" onClick={clickSearch}>Search</button>
         </div>
     )

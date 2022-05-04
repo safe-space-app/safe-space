@@ -1,6 +1,21 @@
 .App {
   text-align: center;
   background-color: #282c34;
+  min-height: 100vh;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+.body {
+  background-color: #282c34;
+}
+
+.navBar {
+  // margin-top: 5%;
+}
+#root {
+  background-color: #282c34;
 }
 
 .App-logo {

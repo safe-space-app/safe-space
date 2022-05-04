@@ -3,6 +3,8 @@ import "../Stylesheets/Login.scss";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Navigate } from "react-router-dom";
+import logo from '../Images/logo.png'
+
 //Login component
 
 
@@ -82,7 +84,7 @@ const Login = (props) => {
           // create a post request then in the body send username and password
          // setData(JSON.stringify(data))
       })}>
-      <div className="input-container" >
+      <div id="input-container" >
         <input {...register("username")} type="text" id="username" name="username" placeholder="Username" required />
         
       </div>

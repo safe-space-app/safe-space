@@ -10,7 +10,7 @@
     align-items: center;
     background: 282c34;
     border-radius: 5px;
-    
+    margin-top: 5%;
 }
 
 //logged out nav bar
@@ -21,6 +21,7 @@
     // border: 5px solid #282c34;
     background:  #282c34;
     border-radius: 10px;
+
 }
 
 //logo image 
@@ -105,4 +106,8 @@
     float: right;
     position: absolute;
     right: 25px;
+}
+
+#navbar{
+    padding: 0px 10px 0px 10px;
 }

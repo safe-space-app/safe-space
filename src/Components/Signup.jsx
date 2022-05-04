@@ -72,6 +72,7 @@ const SignUp = (props) => {
           {/* {renderErrorMessage("Please enter password")} */}
           {/* if sign up declined, empty div else render the Username Already Taken*/}
           {signUpFail}
+          <br></br>
         <input type="submit" className="submitbutton"/>
         
         </div>

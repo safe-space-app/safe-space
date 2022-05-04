@@ -41,13 +41,13 @@ const Navbar = (props) => {
   if (!Object.entries(props.user).length){
     return (
       <div>
-        <NavBarLoggedOut />
+        
       </div>
       )
   } else {
     return (
       <div>
-        <NavBarLoggedIn />
+        <NavBarLoggedIn id='navbar'/>
       </div>
     )
   };
