@@ -11,8 +11,8 @@ const BusinessCard = (props) => {
 
 console.log('business cadr up:', props.thumbsUpCount)
 console.log('business cadr down:', props.thumbsDownCount)
-const [countUp, setCountUp] = useState(props.thumbsUpCount);
-const [countDown, setCountDown] = useState(props.thumbsDownCount)
+const [countUp, setCountUp] = useState(0);
+const [countDown, setCountDown] = useState(0)
 
 //onclick for thumbs will be fetch request to save location to db - send restaurant id
 //onclick for favorite will be fetch request to save favorites to user profile - send restaurant id
@@ -43,6 +43,26 @@ const [countDown, setCountDown] = useState(props.thumbsDownCount)
       });
   }
 
+  const addFavorite = (username, locationId) => {
+    console.log('username: ', username)
+    console.log('locationId: ', locationId)
+    fetch("http://localhost:3000/addFavorite", {
+      method: "POST",
+      body: JSON.stringify({'username': username, 'locationId': locationId}),
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+      }
+    })
+    .then((response) => {
+      console.log(response.status)
+    })
+    .catch((err) => {
+      console.log("were getting an error", err);
+      alert('Error adding favorite');
+    });
+  }
+
 
   return(
     <div className="BusinessCard">
@@ -53,10 +73,12 @@ const [countDown, setCountDown] = useState(props.thumbsDownCount)
 
       <h6>{props.address1}</h6>
       <h6>{props.city}, {props.state} {props.zipcode}</h6>
-      <Button onClick={() => {vote(props.id, 'upvote')}}><ThumbUpIcon/>{`${countUp === undefined ? " " : countUp}`}</Button>
-      <Button onClick={() => {vote(props.id, 'downvote')}}><ThumbDownIcon/>{`${countDown === undefined ? " " : countDown}`}</Button>
+      {/* <Button onClick={() => {vote(props.id, 'upvote')}}><ThumbUpIcon/>{`${countUp === undefined ? " " : countUp}`}</Button>
+      <Button onClick={() => {vote(props.id, 'downvote')}}><ThumbDownIcon/>{`${countDown === undefined ? " " : countDown}`}</Button> */}
+      <Button onClick={() => {setCountUp(countUp+1)}}><ThumbUpIcon/>{`${countUp === 0 ? " " : countUp}`}</Button>
+      <Button onClick={() => {setCountDown(countDown+1)}}><ThumbDownIcon/>{`${countDown === 0 ? " " : countDown}`}</Button>
 
-
+      <Button onClick={() => addFavorite(props.user.username, props.id)}>Add to Favorites</Button>
       
     </div>
   )

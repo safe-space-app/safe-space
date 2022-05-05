@@ -8,11 +8,14 @@ import FeedContainer from './Containers/FeedContainer.jsx'
 // import Signup from './Components/Signup.jsx'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from './Components/NavBar.jsx';
+import FavoritesContainer from './Containers/FavoritesContainer.jsx'
 
 function App() {
 
   const [user, setUser] = useState({});
   const [location, setLocation] = useState([])
+  const [favorites, setFavorites] = useState([])
+
 
   return (
     <div className="App">
@@ -22,7 +25,8 @@ function App() {
      <Navbar className='navBar' user={user}/>
         <Routes>
           <Route path ='/' element={<LoginSignupContainer location={location} setLocation={setLocation} setUser={setUser}/> }/>
-          <Route path = '/feed' element={<FeedContainer location={location} setLocation={setLocation} user={user}/> }/>
+          <Route path = '/feed' element={<FeedContainer location={location} setLocation={setLocation} user={user} favorites={favorites} setFavorites={setFavorites}/> }/>
+          <Route path = '/favorites' element={<FavoritesContainer user={user} favorites={favorites} setFavorites={setFavorites} />}/>
         </Routes>
       </BrowserRouter>
       
