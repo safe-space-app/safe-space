@@ -12,7 +12,7 @@ const locationController = {
 
       fetch(`https://api.yelp.com/v3/businesses/search?location=${city},${state}&term=lgbtq`, {
         headers: {
-            'Authorization': 'Bearer H9XvL6dp0gjVn8NKCTG8d8041RWlw0EMX9bsX6dRptipWCpuzAaVTulqewlWlMvPfJG5LW28crhpWqDvc2v6dFaC0gY4U3iTFnaoWbovZJUMWian5ycQVCq941FwYnYx',
+            'Authorization': 'Bearer ',
         }
       })
       .then(data => data.json())
@@ -38,7 +38,7 @@ const locationController = {
       // console.log('longitude:', longitude)
       fetch(`https://api.yelp.com/v3/businesses/search?latitude=${latitude}&longitude=${longitude}&term=lgbtq`, {
         headers: {
-          'Authorization': 'Bearer H9XvL6dp0gjVn8NKCTG8d8041RWlw0EMX9bsX6dRptipWCpuzAaVTulqewlWlMvPfJG5LW28crhpWqDvc2v6dFaC0gY4U3iTFnaoWbovZJUMWian5ycQVCq941FwYnYx',
+          'Authorization': 'Bearer ',
         }
       })
       .then(data => data.json())
